@@ -1,0 +1,228 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ========== RESET ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+  padding: 0;
+}
+
+/* ========== THEME ========== */
+:root {
+  --bg: #f9fafb;
+  --text: #1f2937;
+  --accent: #2563eb;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.05);
+}
+.dark {
+  --bg: #0f172a;
+  --text: #f1f5f9;
+  --accent: #3b82f6;
+  --muted: #94a3b8;
+  --card: #1e293b;
+  --border: #334155;
+  --shadow: rgba(255, 255, 255, 0.05);
+}
+
+/* ========== CONTAINERS ========== */
+.container {
+  max-width: 100%;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+}
+.logo {
+  font-size: 1rem;
+  width: 50px; 
+  font-weight: 800;
+  color: var(--accent);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 5px;
+}
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--accent);
+}
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+/* ========== HEADINGS ========== */
+h1, h2, h3 {
+  font-weight: 800;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+h3 {
+  font-size: 1.5rem;
+  margin: 1.5rem 0 1rem;
+}
+
+/* ========== TEXT & LISTS ========== */
+p, li {
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+mark {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+/* ========== IMAGES & FIGURES ========== */
+figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+figure img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform 0.3s ease;
+}
+figure img:hover {
+  transform: scale(1.02);
+}
+figcaption {
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* ========== DETAILS ========== */
+details {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+/* ========== ARTICLES & SECTIONS ========== */
+section, article {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 20px var(--shadow);
+}
+time {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background-color: var(--card);
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  margin-top: 2rem;
+}
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+footer p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+footer nav ul {
+  display: flex;
+  gap: 1rem;
+}
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+address {
+  font-style: normal;
+}
+
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1068px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

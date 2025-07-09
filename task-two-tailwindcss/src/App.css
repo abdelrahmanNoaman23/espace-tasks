@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+        @keyframes cardEntry {
+          0% {
+            transform: translateY(32px);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        
+        .card-entry {
+          animation: cardEntry 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        .gradient-text {
+          background: linear-gradient(45deg, #a855f7, #ec4899);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          color: transparent;
+        }
+        
+        .image-overlay {
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.6) 0%,
+            transparent 50%,
+            transparent 100%
+          );
+        }
+        
+        .hover-overlay {
+          background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .card-description {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+      
