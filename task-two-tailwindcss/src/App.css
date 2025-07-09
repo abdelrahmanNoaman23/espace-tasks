@@ -29,14 +29,14 @@
         .image-overlay {
           background: linear-gradient(
             to top,
-            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 1) 0%,
             transparent 50%,
             transparent 100%
           );
         }
         
         .hover-overlay {
-          background: rgba(0, 0, 0, 0.5);
+          background: rgba(0, 0, 0, 1);
         }
         
         .card-description {

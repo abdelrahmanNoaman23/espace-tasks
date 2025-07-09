@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Eye, MessageCircle, Calendar, User } from 'lucide-react';
-import "./App.css"; // Ensure you have the correct path to your CSS file
+import "./App.css"; 
 const CardGrid = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -125,7 +125,7 @@ const CardGrid = () => {
   return (
     <div className="min-h-screen bg-white p-4 relative overflow-x-hidden sm:p-6 lg:p-8">
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-8xl mx-auto relative z-10">
         <header className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 tracking-tight leading-tight">
             Featured <span className="gradient-text">Articles</span>
@@ -135,7 +135,7 @@ const CardGrid = () => {
           </p>
         </header>
 
-        <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 px-4 sm:px-0">
+        <main className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 px-4 sm:px-0">
           {cards.map((card, index) => (
             <article
               key={card.id}
@@ -154,8 +154,8 @@ const CardGrid = () => {
                 />
                 <div className="absolute inset-0 image-overlay"></div>
                 
-                <div className={`absolute top-4 left-4 bg-purple-500/90 text-white px-4 py-2 rounded-full text-sm font-medium z-10 transition-all duration-300 ${
-                  hoveredCard === card.id ? 'bg-white text-purple-500 scale-105' : ''
+                <div className={`absolute top-4 left-4  px-4 py-2 rounded-full text-sm font-medium z-10 transition-all duration-300 ${
+                  hoveredCard === card.id ? 'bg-white text-purple-500 scale-105' : 'bg-purple-500/90 text-white'
                 }`}>
                   {card.category}
                 </div>
