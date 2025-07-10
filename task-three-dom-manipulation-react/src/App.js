@@ -41,7 +41,7 @@ const BoxClickGame = () => {
       container.appendChild(box);
     }
 
-    // Cleanup function to remove event listeners
+    // Cleanup function to remove event listeners (really rally really importantttt)
     return () => {
       const boxes = container.querySelectorAll('.box');
       boxes.forEach(box => {
