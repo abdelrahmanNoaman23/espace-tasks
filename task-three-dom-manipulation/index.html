@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOC GAME</title>
+    <body>
+        <section>
+            <p id="clicks">0</p>
+        </section>
+    </body>
+
+    <style>
+        .box{
+            width:100px ;
+            height: 100px;
+            margin: 10px;
+            background-color:black ;
+            border-radius: 10%;
+        }
+        
+    </style>
+
+    <script >
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.createElement('div');
+            container.classList.add('container');
+            document.body.appendChild(container);
+
+            for (let i = 0; i < 5; i++) {
+                const box = document.createElement('div');
+                box.classList.add('box');
+                box.addEventListener('click', changeBoxColors);
+                box.addEventListener('click', countClicks);
+                container.appendChild(box);
+                
+            }
+        });
+        const boxex = document.querySelectorAll(".box");
+
+        boxex.forEach((box) => {
+            box.addEventListener('click', () => {
+                box.classList.toggle('active');
+                console.log('Box clicked:', box);
+            });
+            console.log(box);
+        });
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        function changeBoxColors() {
+            const box = event.currentTarget;
+            box.style.backgroundColor = getRandomColor();
+
+        }
+        
+        function countClicks() {
+            const clicksElement = document.getElementById('clicks');
+            let count = parseInt(clicksElement.textContent, 10);
+            count++;
+            clicksElement.textContent = count;
+            console.log('Click count:', count);
+        }
+        countClicks();
+    </script>
+</html>
