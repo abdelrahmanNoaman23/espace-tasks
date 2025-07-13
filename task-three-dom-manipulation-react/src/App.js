@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
 const BoxClickGame = () => {
+  
   const containerRef = useRef(null);
   const clicksRef = useRef(null);
 
